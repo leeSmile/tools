@@ -9,7 +9,7 @@
 @end
 
 @interface NSDate (LXExtension)
-- (LXDateItem *)xmg_timeIntervalSinceDate:(NSDate *)anotherDate;
+- (LXDateItem *)lx_timeIntervalSinceDate:(NSDate *)anotherDate;
 
 - (BOOL)lx_isToday;
 - (BOOL)lx_isYesterday;

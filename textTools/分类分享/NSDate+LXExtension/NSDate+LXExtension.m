@@ -1,6 +1,6 @@
 
 #import "NSDate+LXExtension.h"
-#import "NSCalendar+LXExtension.h"
+
 
 @implementation LXDateItem
 - (NSString *)description
@@ -40,7 +40,7 @@
 - (BOOL)lx_isToday
 {
     // 判断self这个日期对象是否为今天
-    NSCalendar *calendar = [NSCalendar lx_calendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     
@@ -77,7 +77,7 @@
     NSDate *selfDate = [fmt dateFromString:selfString];
     NSDate *nowDate = [fmt dateFromString:nowString];
     
-    NSCalendar *calendar = [NSCalendar lx_calendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateComponents *cmps = [calendar components:unit fromDate:selfDate toDate:nowDate options:0];
     return cmps.year == 0
@@ -98,7 +98,7 @@
     NSDate *selfDate = [fmt dateFromString:selfString];
     NSDate *nowDate = [fmt dateFromString:nowString];
     
-    NSCalendar *calendar = [NSCalendar lx_calendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateComponents *cmps = [calendar components:unit fromDate:selfDate toDate:nowDate options:0];
     return cmps.year == 0
@@ -109,7 +109,7 @@
 - (BOOL)lx_isThisYear
 {
     // 判断self这个日期对象是否为今年
-    NSCalendar *calendar = [NSCalendar lx_calendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSInteger selfYear = [calendar components:NSCalendarUnitYear fromDate:self].year;
     NSInteger nowYear = [calendar components:NSCalendarUnitYear fromDate:[NSDate date]].year;
