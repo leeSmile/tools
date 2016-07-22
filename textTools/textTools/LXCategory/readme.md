@@ -1,0 +1,2 @@
+LFNSData+Hash
+LFNSData+zlib
